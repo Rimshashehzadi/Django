@@ -9,7 +9,7 @@
 8. Now that your environment – a “project” – is set up, you’re set to start doing work.Each application you write in Django consists of a Python package that follows a certain convention. Django comes with a utility that automatically generates the basic directory structure of an app, so you can focus on writing code rather than creating directories.
 9. Projects vs. apps:
 
-What’s the difference between a project and an app? An app is a web application that does something – e.g., a blog system, a database of public records or a small poll app. A project is a collection of configuration and apps for a particular website. A project can contain multiple apps. An app can be in multiple projects. 
+   What’s the difference between a project and an app? An app is a web application that does something – e.g., a blog system, a database of public records or a small poll app. A project is a collection of configuration and apps for a particular website. A project can contain multiple apps. An app can be in multiple projects. 
 10. To create your app, make sure you’re in the same directory as manage.py and type this command: 'py manage.py startapp polls'
 11. Here mysite is a project and polls is an app.
 
