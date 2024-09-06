@@ -6,7 +6,12 @@ from django.shortcuts import render,HttpResponse      # render is use for render
 
 
 def index(request):
-    return HttpResponse("this is polls page")
+    context = {
+        'variable1' : "Rimsha is great",
+        'variable2' : "And Pakistan is also great country"
+    }
+    return render(request, 'index.html' ,context)
+    # return HttpResponse("this is polls page")
 
 def about(request):
     return HttpResponse("this is about page")
