@@ -14,11 +14,14 @@ def index(request):
     # return HttpResponse("this is polls page")
 
 def about(request):
-    return HttpResponse("this is about page")
+    # return HttpResponse("this is about page")
+    return render(request, 'about.html')
 
 def services(request):
-    return HttpResponse("this is services services")
+    # return HttpResponse("this is services services")
+    return render(request, 'services.html')
 
 def contact(request):
-    return HttpResponse("this is contact page")
+    # return HttpResponse("this is contact page")
+    return render(request, 'contact.html')
 
