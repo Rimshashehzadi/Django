@@ -38,3 +38,14 @@ Some of these applications make use of at least one database table, though, so w
  'py manage.py migrate'
 
  The migrate command looks at the INSTALLED_APPS setting and creates any necessary database tables according to the database settings in your mysite/settings.py file and the database migrations shipped with the app (we’ll cover those later). You’ll see a message for each migration it applies. If you’re interested, run the command-line client for your database and type \dt (PostgreSQL), SHOW TABLES; (MariaDB, MySQL), .tables (SQLite), or SELECT TABLE_NAME FROM USER_TABLES; (Oracle) to display the tables Django created.
+
+Templates
+Static
+create superuser
+Admin Login/Logout
+MOdels
+MoDELS AND  APP REGISTRATION
+Database
+Database Management
+Crud(Continue)
+
