@@ -1,7 +1,9 @@
 from pyexpat.errors import messages
-from django.shortcuts import render,HttpResponse  
+from django.shortcuts import redirect, render,HttpResponse  
 from polls.models import Contact
-from datetime import datetime     # render is use for render the template in the project 
+from datetime import datetime 
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate,login,logout   # render is use for render the template in the project 
 #HttpRespone is a class in django that returns http respone 
 
 # Create your views here.
@@ -13,6 +15,8 @@ def index(request):
         'variable1' : "Rimsha is great",
         'variable2' : "And Pakistan is also great country"
     }
+    if request.user.is_anonymous:
+        return redirect('/login')
     # messages.success(request,'this is new msg')
     return render(request, 'index.html' ,context)
     # return HttpResponse("this is polls page")
@@ -38,4 +42,21 @@ def contact(request):
         
     
     return render(request, 'contact.html')
+def loginuser(request):
+    if request == 'POST':
+        username = request.POST.get('username'),
+        password = request.POST.get('password')
+        user = authenticate(username="username", password="password")
+        if user is not None:
+            login(request,user)
+            return redirect('/')
+             # A backend authenticated the credentials
+        else:
+             # No backend authenticated the credentials
+             return render(request,'login.html')
+    return render(request, 'login.html')
 
+def logoutuser (request):
+    logout(request)
+    return redirect('/login')
+#user password Bisu5fB67nNY9de
