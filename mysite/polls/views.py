@@ -13,7 +13,7 @@ def index(request):
         'variable1' : "Rimsha is great",
         'variable2' : "And Pakistan is also great country"
     }
-    messages.success(request,'this is message')
+    # messages.success(request,'this is new msg')
     return render(request, 'index.html' ,context)
     # return HttpResponse("this is polls page")
 
@@ -32,9 +32,9 @@ def contact(request):
         email = request.POST.get('email')
         phone = request.POST.get('phone')
         desc = request .POST.get('desc')
-        contact = Contact(name= name,email=email,phone=phone,desc = desc,date = datetime.today())
+        contact = Contact(name= name,email=email,phone=phone,desc = desc, date = datetime.today())
         contact.save()
-        # messages.success(request,'Your message has been sent!')
+        messages.success(request,'Your message has been sent!')
         
     
     return render(request, 'contact.html')
